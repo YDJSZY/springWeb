@@ -1,0 +1,35 @@
+spring:
+  # 数据库配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456789
+    url: jdbc:mysql://localhost:3306/rose?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=true
+
+    # 使用druid数据源
+    # 配置初始化大小、最小、最大
+    maxActive: 20
+    initialSize: 5
+    minIdle: 5
+    # 配置获取连接等待超时的时间
+    maxWait: 60000
+    # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+    timeBetweenEvictionRunsMillis: 60000
+    # 配置一个连接在池中最小生存的时间，单位是毫秒
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+
+  # JPA配置
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    database: MYSQL
+    hibernate:
+      ddl-auto: update
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
