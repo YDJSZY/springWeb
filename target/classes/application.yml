@@ -3,7 +3,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
-    password: 123456789
+    password: 12345678
     url: jdbc:mysql://localhost:3306/rose?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=true
 
     # 使用druid数据源
